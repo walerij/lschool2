@@ -8,7 +8,7 @@ class SiteController extends Controller
 {
     public function actionIndex()
     {
-        return 'Video School ver 1.0.0';
+        return $this->render('index');
     }
 
 }
