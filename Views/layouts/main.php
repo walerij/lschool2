@@ -14,7 +14,7 @@
     <?php
     NavBar::begin([
          'brandLabel' =>'School',
-          'brandUrl' => '#',
+          'brandUrl' =>Yii::$app->homeUrl,
           'options' =>[
                   'class'=>'navbar navbar-default'
           ]
