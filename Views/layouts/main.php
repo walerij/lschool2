@@ -1,11 +1,17 @@
 
 <head>
     <title>
-        <title>school</title>
+        school
 
     </title>
+    <style>
+
+    </style>
 </head>
 <body>
+ <div title="t">
+     Добро пожаловать в видеошколу!
+ </div>
    <?=$content?>
 
 
