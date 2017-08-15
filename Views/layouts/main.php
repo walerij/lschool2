@@ -4,23 +4,29 @@
         school
 
     </title>
-    <style>
+ <?php $this->head();
 
-    </style>
+ use yii\bootstrap\NavBar;
+ ?>
 </head>
 <body>
- <div title="t">
-     Добро пожаловать в видеошколу!
+<?php $this->beginBody(); ?>
+    <?php
+    NavBar::begin([
+         'brandLabel' =>'School',
+          'brandUrl' => '#',
+          'options' =>[
+                  'class'=>'navbar navbar-default'
+          ]
+      ]);
+      NavBar::end();
+    ?>
+ <div class="container">
+     <?=$content?>
  </div>
-   <?=$content?>
+
 
 
 </body>
-
-<?php
-/**
- * Created by PhpStorm.
- * User: Administrator
- * Date: 14.08.2017
- * Time: 0:23
- */
+<?php $this->endBody(); ?>
+<?php $this->endPage(); ?>
