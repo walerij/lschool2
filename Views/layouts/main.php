@@ -19,6 +19,13 @@
                   'class'=>'navbar navbar-default'
           ]
       ]);
+    $menu= [
+            ['label'=>'Join', 'url'=>['/site/join']],
+            ['label'=>'Login', 'url'=>['/site/login']]
+    ];
+    echo \yii\bootstrap\Nav::widget([
+            'options' => ['class'=>'nav navbar-nav navbar-right'], 'items'=>$menu
+    ]);
       NavBar::end();
     ?>
  <div class="container">
