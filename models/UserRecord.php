@@ -12,12 +12,11 @@ class UserRecord extends \yii\db\ActiveRecord
 
     public function setTestUser()
     {
-        $this->name="Wal";
-        $this->email ="v@val.ru";
-        $this->passhash="SHA512 HASH HASH HASH HASH11111111111111!!!!!hkjlk";
-        $this->ststus=2;
-
-
+        $faker = \Faker\Factory::create();
+        $this->name=$faker->name();
+        $this->email =$faker->email;
+        $this->passhash=$faker->password;
+        $this->ststus=$faker->randomDigit;
     }
 
 }
