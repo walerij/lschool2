@@ -9,7 +9,10 @@
               'showScriptName' =>false
           ],
           'request'=>['cookieValidationKey'=>'fkmj0k'],
-          'db'=>require (__DIR__.'/db.php')
+          'db'=>require (__DIR__.'/db.php'),
+          'user'=>[
+              'identityClass'=>'app\models\UserIdentity'
+          ]
 
       ]
       ,

@@ -19,4 +19,6 @@ class UserRecord extends \yii\db\ActiveRecord
         $this->ststus=$faker->randomDigit;
     }
 
+
+
 }
