@@ -19,6 +19,10 @@ class UserRecord extends \yii\db\ActiveRecord
         $this->ststus=$faker->randomDigit;
     }
 
-
+    public static function existsEmail($email)
+    {
+       $count = static::find()->where(['email'=>email])->count();
+       return $count>0;
+    }
 
 }

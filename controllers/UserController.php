@@ -17,14 +17,15 @@ class UserController extends Controller
     public function actionJoin()
     {
         if(Yii::$app->request->isPost)
-        {
+
             return $this->actionJoinPost();
-        }
 
         $userJoinForm= new UserJoinForm();
         $userRecord = new UserRecord();
         $userRecord ->setTestUser();
-        $userJoinForm->setUserRecord($userRecord);
+       $userJoinForm->setUserRecord($userRecord)
+
+            ;
         return $this->render('join',
         compact('userJoinForm')
             );
@@ -32,7 +33,9 @@ class UserController extends Controller
 
     public function actionJoinPost(){
         $userJoinForm= new UserJoinForm();
-        $userJoinForm->load(Yii::$app->request->post());
+        if($userJoinForm->load(Yii::$app->request->post()))
+          if($userJoinForm->validate())
+             $userJoinForm->name.='ok';
         return $this->render('join',
             compact('userJoinForm')
         );
