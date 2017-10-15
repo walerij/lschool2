@@ -17,9 +17,7 @@ use yii\helpers\Html;
 
 
         <?php ActiveForm::end();?>
-        email<br>
-        password<br>
-        [ENTER]
+
 
     </div>
 

@@ -50,7 +50,7 @@ class UserController extends Controller
     public function actionLogin()
     {
         $userLoginForm = new UserLoginForm();
-        return $this->render('login');
+        return $this->render('login',compact('userLoginForm' ));
     }
 
     public function actionThanks()
