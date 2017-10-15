@@ -25,4 +25,14 @@ class UserRecord extends \yii\db\ActiveRecord
        return $count>0;
     }
 
+    public function setUserJoinForm($userJoinForm)
+    {
+        $this->name=$userJoinForm->name;
+        $this->email=$userJoinForm->email;
+        $this->passhash=$userJoinForm->password;
+        $this->ststus=1;
+
+    }
+
+
 }

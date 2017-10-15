@@ -4,6 +4,7 @@
 namespace app\controllers;
 use app\models\UserIdentity;
 use app\models\UserJoinForm;
+use app\models\UserLoginForm;
 use Codeception\Lib\Connector\Yii2;
 use yii;
 use app\models\UserRecord;
@@ -35,16 +36,28 @@ class UserController extends Controller
         $userJoinForm= new UserJoinForm();
         if($userJoinForm->load(Yii::$app->request->post()))
           if($userJoinForm->validate())
-             $userJoinForm->name.='ok';
-        return $this->render('join',
+          {
+              $userRecord=new UserRecord();
+              $userRecord->setUserJoinForm($userJoinForm);
+              $userRecord->save();
+              return $this->redirect('/user/thanks');
+          }
+
+            return $this->render('join',
             compact('userJoinForm')
         );
     }
     public function actionLogin()
     {
+        $userLoginForm = new UserLoginForm();
+        return $this->render('login');
+    }
+
+    public function actionThanks()
+    {
         //$uid = UserIdentity::findIdentity(1);
         //Yii::$app->user->login($uid);
-        return $this->render('login');
+        return $this->render('thanks');
     }
 
     public  function actionLogout()
