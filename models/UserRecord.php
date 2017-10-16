@@ -10,6 +10,8 @@ class UserRecord extends \yii\db\ActiveRecord
         return "user";
     }
 
+
+
     public function setTestUser()
     {
         $faker = \Faker\Factory::create();
@@ -21,7 +23,7 @@ class UserRecord extends \yii\db\ActiveRecord
 
     public static function existsEmail($email)
     {
-       $count = static::find()->where(['email'=>email])->count();
+       $count = static::find()->where(['email'=>$email])->count();
        return $count>0;
     }
 
@@ -31,6 +33,12 @@ class UserRecord extends \yii\db\ActiveRecord
         $this->email=$userJoinForm->email;
         $this->passhash=$userJoinForm->password;
         $this->ststus=1;
+
+    }
+
+    public static function findUserByEmail($email)
+    {
+        return  static::findOne(['email'=>$email]);
 
     }
 
