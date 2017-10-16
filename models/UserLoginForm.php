@@ -35,7 +35,7 @@ class UserLoginForm extends Model
     {
         if($this->hasErrors())
             return;
-        //$userRecord = UserRecord::findUserByEmail($this->email);
+       
         if($this->userRecord->passhash!=$this->password)
             $this->addError('password', 'wrong passowrd');
     }
